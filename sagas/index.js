@@ -6,6 +6,6 @@ import infinitySaga from "./infinity";
 axios.defaults.baseURL = 'http://localhost:4000';
 
 export default function* rootSaga() {
-  console.log('saga index')
+  // console.log('saga index')
   yield fork(infinitySaga)
 }
