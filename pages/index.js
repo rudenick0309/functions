@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect} from "react";
+import {useSelector} from "react-redux";
 
 const Home = () => {
+
   return (
     <div>
-      홈 테스트 구현 중
+
     </div>
 
   )
