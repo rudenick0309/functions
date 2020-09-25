@@ -2,7 +2,7 @@ import produce from "immer";
 
 
 // 첫번째, 이니셜 스테이트 정하기
-const initialState = {
+export const initialState = {
 
   // 1. json에서 데이터 불러오기  . Bucket은 success일 때, 데이터를 담는 변수다.
   loadJsonBucket: null,
@@ -33,19 +33,19 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
 
     // 1
     case LOAD_JSON_REQUEST:
-      console.log("f reducer infinity, load json request,  executes");
+      // console.log("f reducer infinity, load json request,  executes");
       draft.loadJsonLoading = true;
       draft.loadJsonDone = false;
       draft.loadJsonError = null;
       break;
     case LOAD_JSON_SUCCESS:
-      console.log("f infinity, load json success, action; ", action);
+      // console.log("f reducer infinity, load json success, action; ", action);
       draft.loadJsonLoading = false;
       draft.loadJsonDone = true;
       draft.loadJsonBucket = action.data;
       break;
     case LOAD_JSON_FAILURE:
-      console.log("f infinity, load json failure, action; ", action);
+      // console.log("f reducer infinity, load json failure, action; ", action);
       draft.loadJsonLoading = false;
       draft.loadJsonError = action.error;
       break;
