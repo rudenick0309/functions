@@ -2,8 +2,8 @@ import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 
 const Infinity = ({data}) => {
-  console.log("f c, infinity, data;", data);
-  const {name, age, image} = data;
+  // console.log("f c, infinity, data;", data);
+  const {name, id, image} = data;
 
   return (
     <div style={styles.wrapper}>
@@ -14,7 +14,7 @@ const Infinity = ({data}) => {
             {name}
           </div>
           <div>
-            {age}
+            {/*{id}*/}
           </div>
         </div>
 
