@@ -7,6 +7,7 @@ import {
   LOAD_INFINITY_REQUEST,
   LOAD_INFINITY_SUCCESS,
 } from "../reducers/infinity";
+import {LOAD_NORMAL_REQUEST} from "../reducers/normal";
 
 
 
@@ -35,6 +36,7 @@ function* loadInfinity() {
   }
 }
 
+
 function* watchInfinity() {
   console.log('f saga 2 watchinfinity')
   yield takeLatest(LOAD_INFINITY_REQUEST, loadInfinity);
@@ -43,6 +45,6 @@ function* watchInfinity() {
 
 export default function* infinitySaga() {
   console.log('f saga 1 infinitysaga')
-  // yield all[fork(watchInfinity)]   // 하나일 때 all 하면 안 되더라 실행 자체가 안 됐음
-  yield fork(watchInfinity)
+  yield fork(watchInfinity)   // 하나일 때 all 하면 안 되더라 실행 자체가 안 됐음
+  // yield fork(watchInfinity)
 }
