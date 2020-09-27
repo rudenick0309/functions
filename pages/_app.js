@@ -7,18 +7,12 @@ import Infinity from "../components/infinity";
 
 const Functions = ({ Component }) => {
 
-
-
-
-
   return (
     <>
       <Head>
         <meta charSet={'utf-8'}/>
         <title>Functions</title>
       </Head>
-
-
 
       <Component />
 
