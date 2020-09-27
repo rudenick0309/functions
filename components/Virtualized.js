@@ -9,13 +9,13 @@ const Virtualized = () => {
   const [time, setTime] = useState(new Date());
   const cache = useRef(new CellMeasurerCache({
     fixedWidth: true,
-    defaultHeight: 100,
+    defaultHeight: 500,
   }));
 
 
   useEffect(() => {
     setPeople(
-      [...Array(3000).keys()].map((key) => {
+      [...Array(100).keys()].map((key) => {
         return {
           id: key,
           name: `${faker.name.firstName()} ${faker.name.lastName()}`,
@@ -34,18 +34,21 @@ const Virtualized = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ width: "100%", height: "100vh" }}>
+      {/**/}
+
 
       <div style={styles.wrapper}>
         <AutoSizer>
-          {({width, height}) => (
+          {({ width, height }) => (
+
             <List
               width={width}
               height={height}
               rowHeight={cache.current.rowHeight}
               deferredMeasurementCache={cache.current}
               rowCount={people.length}
-              rowRenderer={({key, index, style, parent}) => {
+              rowRenderer={({ key, index, style, parent }) => {
                 const person = people[index];
 
                 return (
@@ -58,28 +61,28 @@ const Virtualized = () => {
                   >
                     <div style={style}>
                       <h2>{person.name}</h2>
-                      <img src={person.images} />
+                      <img src={person.images} style={{width:'50%', height:'500px'}}  alt=""/>
                     </div>
                   </CellMeasurer>
                 );
               }}
             />
-            )}
+          )}
         </AutoSizer>
       </div>
 
-    </div>
 
-    //
+    {/*  */}
+    </div>
 
   );
 }
 
 const styles = {
   wrapper: {
-    width: "50%",
+    width: "100%",
     height: "100vh",
-    // position:'relative',
+    position:'relative',
     left:'30%',
 
   },
@@ -92,3 +95,35 @@ const styles = {
 export default Virtualized;
 
 
+//
+// <div>
+//   <AutoSizer>
+//     {({width, height}) => (
+//       <List
+//         width={width}
+//         height={height}
+//         rowHeight={cache.current.rowHeight}
+//         deferredMeasurementCache={cache.current}
+//         rowCount={people.length}
+//         rowRenderer={({key, index, style, parent}) => {
+//           const person = people[index];
+//
+//           return (
+//             <CellMeasurer
+//               key={key}
+//               cache={cache.current}
+//               parent={parent}
+//               columnIndex={0}
+//               rowIndex={index}
+//             >
+//               <div style={style}>
+//                 <h2>{person.name}</h2>
+//                 <img src={person.images} />
+//               </div>
+//             </CellMeasurer>
+//           );
+//         }}
+//       />
+//     )}
+//   </AutoSizer>
+// </div>
