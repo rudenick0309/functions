@@ -1,14 +1,14 @@
-import React from 'react';
-import Virtualized from './Virtualized'
+import React from "react";
+import Virtualized from "./Virtualized";
 
 const VirtualizedExecute = () => {
   return (
     <div>
 
-      <Virtualized />
+      <Virtualized/>
 
-      </div>
-  )
-}
+    </div>
+  );
+};
 
 export default VirtualizedExecute;
