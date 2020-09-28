@@ -26,7 +26,8 @@ const PaginationTwo = ({postsPerPage, totalPosts, paginate}) => {
 const styles = {
   wrapper: {
     display: "flex",
-    border:'2px solid red',
+    position: 'fixed',
+    top:'500px',
   },
   content: {
     marginRight: "10px",
