@@ -2,3 +2,5 @@
 /node_modules/
 /package-lock.json
 /(no)react-virtualized.js
+/fake-data-generator.js
+/data.json
