@@ -61,7 +61,7 @@ const Virtualized = () => {
                   >
                     <div style={style}>
                       <h2>{person.name}</h2>
-                      <img src={person.images} style={{width:'50%', height:'500px'}}  alt=""/>
+                      <img src={person.images} style={{width:'80%', height:'400px'}}  alt=""/>
                     </div>
                   </CellMeasurer>
                 );
@@ -80,11 +80,10 @@ const Virtualized = () => {
 
 const styles = {
   wrapper: {
-    width: "100%",
+    width: "50%",
     height: "100vh",
     position:'relative',
     left:'30%',
-
   },
   font:{
     color:'white',
