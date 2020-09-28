@@ -15,7 +15,7 @@ const Virtualized = () => {
 
   useEffect(() => {
     setPeople(
-      [...Array(100).keys()].map((key) => {
+      [...Array(10000).keys()].map((key) => {
         return {
           id: key,
           name: `${faker.name.firstName()} ${faker.name.lastName()}`,
