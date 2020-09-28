@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
 import wrapper from "../store/configureStore";
 import NormalExecute from "../components/NormalExecute";
 import InfinityExecute from "../components/infinityExecute";
@@ -17,7 +16,7 @@ const Home = () => {
 
   const onClickHome = useCallback(() => {
     setHome(true)
-    setNormal(true);
+    setNormal(false);
     setInfinity(false);
     setVirtualized(false);
     setPagination(false);
@@ -63,21 +62,29 @@ const Home = () => {
   return (
     <>
       <div style={styles.wrapper}>
-        {/*<span onClick={onClickHome}>Home               </span>*/}
-        <span onClick={onClickNormal}>Normal scrolling    </span>
-        <span onClick={onClickInfinity}>Infinity Scrolling    </span>
-        <span onClick={onClickVirtualized}>React virtualized    </span>
-        <span onClick={onClickPagination}>Pagination     </span>
+        <span style={styles.content} onClick={onClickHome}>Home</span>
+        <span style={styles.content} onClick={onClickNormal}>Normal scrolling</span>
+        <span style={styles.content} onClick={onClickInfinity}>Infinity Scrolling</span>
+        <span style={styles.content} onClick={onClickVirtualized}>React virtualized</span>
+        <span style={styles.content} onClick={onClickPagination}>Pagination</span>
       </div>
 
+      <p style={styles.line}></p>
+
       {home
-      ? (<div>
+      ? (<div style={styles.home}>
           devsner의 기능 연습장입니다.
           <br />
           현재 추가된 기능은,
-          1. Normal scrolling -> 더미 데이터가 9,000개입니다. 초기 로딩 속도가 5초 정도 걸릴 수 있습니다.
-          2. Infinity scrolling -> 모니터의 높이에 따라 새로운 데이터를 계속해서 불러들입니다. 재요청하는 시점은, 현재 출력되고 있는 데이터 개수에 따라, 전체 높이의 3분의 2 정도 되는 지점에서 데이터를 불러들입니다
-          3. React virtualized ->
+          <br />
+          1. Normal scrolling -> 더미 데이터가 9,000개입니다. ** 컴퓨터 사양에 따라 로딩 시간이 다소 걸릴 수 있습니다 **
+          <br />
+          2. Infinity scrolling -> 현재 출력되고 있는 데이터 개수에 따라, 전체 높이의 3분의 2 정도 되는 지점에서 데이터를 다시 가져옵니다
+          <br />
+          3. React virtualized -> 더미 데이터가 10,000개입니다
+          <br />
+          4. Pagination -> 배열을 페이지화로 구분하는 기능입니다.
+          <br />
         </div>)
       : (<></>)
       }
@@ -108,15 +115,35 @@ const Home = () => {
 };
 
 const styles = {
+  home:{
+    marginTop:'10%',
+    marginLeft:'20%',
+    height:'100%',
+  },
+
   fixed: {
     position: "fixed",
   },
 
   wrapper: {
     // padding: "130px",
-    marginBottom:'60px',
-    border: "2px solid red",
+    marginTop:'20px',
+    display:'flex',
+    justifyContent:'space-around',
+    alignItems:'center',
   },
+
+  content:{
+    border:'2px solid grey',
+    borderRadius:'10px',
+    padding:'5px',
+  },
+
+  line:{
+    borderBottom:'1px solid grey',
+    marginBottom:'10px',
+    borderRadius: '20%',
+  }
 };
 
 export default wrapper.withRedux(Home);
