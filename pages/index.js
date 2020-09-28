@@ -60,8 +60,8 @@ const Home = () => {
 
 
   return (
-    <>
-      <div style={styles.wrapper}>
+    <div id={'header'}>
+      <div  style={styles.wrapper}>
         <span style={styles.content} onClick={onClickHome}>Home</span>
         <span style={styles.content} onClick={onClickNormal}>Normal scrolling</span>
         <span style={styles.content} onClick={onClickInfinity}>Infinity Scrolling</span>
@@ -70,6 +70,10 @@ const Home = () => {
       </div>
 
       <p style={styles.line}></p>
+
+
+        <a style={styles.a} href={'#header'}>맨 위로</a>
+
 
       {home
       ? (<div style={styles.home}>
@@ -109,7 +113,10 @@ const Home = () => {
         ? (<PaginationExecute/>)
         : (<></>)
       }
-    </>
+
+
+
+    </div>
 
   );
 };
@@ -121,9 +128,12 @@ const styles = {
     height:'100%',
   },
 
-  fixed: {
+  a:{
     position: "fixed",
+    bottom:'30px',
+    right:'30px',
   },
+
 
   wrapper: {
     // padding: "130px",
