@@ -21,7 +21,7 @@ export const initialState = {
 
 
 // 인피니티 더미 데이터
-export const generateDummyPost = (number) => Array(10).fill().map(() => ({
+export const generateDummyPost = (number) => Array(number).fill().map(() => ({
   id:shortid.generate(),
   name:faker.name.findName(),
   image: faker.image.image(),
