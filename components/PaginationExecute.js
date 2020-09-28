@@ -9,19 +9,19 @@ const PaginationExecute = () => {
   // const [posts, setPosts] = useState([]);  // go redux
   // const [loading, setLoading] = useState(false); // go redux
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(8);
+  const [postsPerPage, setPostsPerPage] = useState(15);
   const dispatch = useDispatch();
   const paginationData = useSelector((state) => state.pagination?.paginationData);
 
   useEffect(() => {
     // const fetchPosts = async () => {
-      // setLoading(true);
-      // const res = await axios.get("https://jsonplaceholder.typicode.com/posts"); // go redux
-      dispatch({
-        type:LOAD_PAGINATION_REQUEST
-      })
-      // setPosts(res.data);
-      // setLoading(false);
+    // setLoading(true);
+    // const res = await axios.get("https://jsonplaceholder.typicode.com/posts"); // go redux
+    dispatch({
+      type: LOAD_PAGINATION_REQUEST
+    });
+    // setPosts(res.data);
+    // setLoading(false);
     // };
 
     // fetchPosts();
@@ -34,17 +34,16 @@ const PaginationExecute = () => {
 
   //Change page
   const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber)
-  }
+    setCurrentPage(pageNumber);
+  };
 
-  // console.log('f c pagination data;', posts);
   return (
-    <div className={"container mt-5"}>
-      {/*<div >*/}
-      <h1 className={"text-primary mb-3"}>My blog</h1>
-      {/*<h1 >My blog</h1>*/}
-      <Pagination posts={currentPosts} />
+    <div>
+
+      <h1>Random name</h1>
+      <Pagination posts={currentPosts}/>
       <PaginationTwo postsPerPage={postsPerPage} totalPosts={paginationData?.length} paginate={paginate}/>
+
     </div>
   );
 };
