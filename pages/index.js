@@ -4,7 +4,7 @@ import NormalExecute from "../components/NormalExecute";
 import InfinityExecute from "../components/infinityExecute";
 import VirtualizedExecute from "../components/VirtualizedExecute";
 import PaginationExecute from "../components/PaginationExecute";
-
+import GitHubCalendar from 'react-github-calendar';
 
 const Home = () => {
   console.log("홈");
@@ -71,6 +71,9 @@ const Home = () => {
 
       <p style={styles.line}></p>
 
+      {/*<img src="http://ghchart.rshah.org/rudenick0309" alt="rudenick0309's Github chart" />*/}
+
+      <GitHubCalendar username="rudenick0309" />
 
         <a style={styles.a} href={'#header'}>맨 위로</a>
 
