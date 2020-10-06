@@ -73,7 +73,7 @@ const Home = () => {
 
       {/*<img src="http://ghchart.rshah.org/rudenick0309" alt="rudenick0309's Github chart" />*/}
 
-      <GitHubCalendar username="rudenick0309" />
+      {/*<GitHubCalendar username="rudenick0309" />*/}
 
         <a style={styles.a} href={'#header'}>맨 위로</a>
 
