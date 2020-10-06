@@ -19,7 +19,7 @@ const InfinityExecute = () => {
     })
   },[])
 
-  useEffect(() => {    // useEffcet에서 윈도우 이벤트를 쓸 떄는 항상 return으로 해당 함수를 clear해줘야 한다.
+  useEffect(() => {
     function onScroll () {
       console.log(window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight)
       if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - 2400 ) {
