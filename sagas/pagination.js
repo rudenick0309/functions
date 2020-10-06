@@ -12,7 +12,7 @@ import {generateDummyPost} from "../reducers/infinity";
 // }
 
 function* loadPagination() {
-  console.log('f saga 3 loadPagination')
+  // console.log('f saga 3 loadPagination')
   try {
     // const result = yield call(loadPaginationAPI);
     // yield delay(1000);
@@ -33,13 +33,13 @@ function* loadPagination() {
 
 
 function* watchPagination() {
-  console.log('f saga 2 watchPagination')
+  // console.log('f saga 2 watchPagination')
   yield takeLatest(LOAD_PAGINATION_REQUEST, loadPagination);
 }
 
 
 export default function* paginationSaga() {
-  console.log('f saga 1 paginationsaga')
+  // console.log('f saga 1 paginationsaga')
 
   yield fork(watchPagination);
 }
