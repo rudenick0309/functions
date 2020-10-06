@@ -4,7 +4,7 @@ import NormalExecute from "../components/NormalExecute";
 import InfinityExecute from "../components/infinityExecute";
 import VirtualizedExecute from "../components/VirtualizedExecute";
 import PaginationExecute from "../components/PaginationExecute";
-import GitHubCalendar from 'react-github-calendar';
+// import GitHubCalendar from 'react-github-calendar';
 
 const Home = () => {
   console.log("홈");
@@ -31,7 +31,7 @@ const Home = () => {
   }, []);
 
   const onClickInfinity = useCallback(() => {
-    console.log("인피니티 작동함");
+    // console.log("인피니티 작동함");
 
     setHome(false)// dispatch(loadInfinityRequest())
     setNormal(false);
@@ -41,7 +41,7 @@ const Home = () => {
   }, []);
 
   const onClickVirtualized = useCallback(() => {
-    console.log("버츄얼라이즈드 작동함");
+    // console.log("버츄얼라이즈드 작동함");
     setHome(false)
     setNormal(false);
     setInfinity(false);
@@ -50,7 +50,7 @@ const Home = () => {
   }, []);
 
   const onClickPagination = useCallback(() => {
-    console.log("페이지네이션 작동함");
+    // console.log("페이지네이션 작동함");
     setHome(false)
     setNormal(false);
     setInfinity(false);
