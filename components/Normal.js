@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Normal = ({data}) => {
-  console.log('f c normal data;', data)
+  // console.log('f c normal data;', data)
   const { name, image  } = data;
 
   return (
