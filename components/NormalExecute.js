@@ -7,7 +7,7 @@ const NormalExecute = () => {
   const dispatch = useDispatch();
   const normalBucket = useSelector((state) => state.normal?.normalBucket)
 
-  console.log('f c, normalbucket;', normalBucket)
+  // console.log('f c, normalbucket;', normalBucket)
 
   useEffect(() => {
     dispatch({
