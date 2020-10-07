@@ -5,11 +5,6 @@ import faker from 'faker';
 // 첫번째, 이니셜 스테이트 정하기
 export const initialState = {
 
-  // loadJsonBucket: [],
-  // loadJsonLoading: false,
-  // loadJsonDone: false,
-  // loadJsonError: null,
-
   // 1. infinity 데이터 불러오기  . Bucket은 success일 때, 데이터를 담는 변수다.
   InfinityBucket:[],
   loadInfinityLoading: false,
@@ -18,7 +13,6 @@ export const initialState = {
   hasMoreBucket: true,  // 얘가 true면 가져오게 하고, false면 못 가져오게 할거다 초기엔 true로 둬서 첫 데이터는 무조건 가져오게한다
 
 };
-
 
 // 인피니티 더미 데이터
 export const generateDummyPost = (number) => Array(number).fill().map(() => ({
