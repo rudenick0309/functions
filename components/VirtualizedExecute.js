@@ -4,9 +4,7 @@ import Virtualized from "./Virtualized";
 const VirtualizedExecute = () => {
   return (
     <div>
-
       <Virtualized/>
-
     </div>
   );
 };
