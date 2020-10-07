@@ -14,17 +14,11 @@ const PaginationExecute = () => {
   const paginationData = useSelector((state) => state.pagination?.paginationData);
 
   useEffect(() => {
-    // const fetchPosts = async () => {
-    // setLoading(true);
-    // const res = await axios.get("https://jsonplaceholder.typicode.com/posts"); // go redux
+
     dispatch({
       type: LOAD_PAGINATION_REQUEST
     });
-    // setPosts(res.data);
-    // setLoading(false);
-    // };
 
-    // fetchPosts();
   }, []);
 
   //Get current posts
