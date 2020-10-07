@@ -72,10 +72,6 @@ const Home = () => {
 
       <p style={styles.line}></p>
 
-      {/*<img src="http://ghchart.rshah.org/rudenick0309" alt="rudenick0309's Github chart" />*/}
-
-      {/*<GitHubCalendar username="rudenick0309" />*/}
-
         <a style={styles.a} href={'#header'}>맨 위로</a>
 
 
@@ -102,7 +98,6 @@ const Home = () => {
           <br />
           4. Pagination -> 100개의 데이터를 페이지화 했습니다.
           <br />
-        {/*  여기에 앞으로 기능 더추가될 거 라는 말 넣기 + css 작업하기*/}
         </div>)
       : (<></>)
       }
