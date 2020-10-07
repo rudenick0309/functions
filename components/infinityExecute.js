@@ -2,9 +2,6 @@ import React, {useCallback, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {LOAD_INFINITY_REQUEST, loadInfinityRequest} from "../reducers/infinity";
 import Infinity from "../components/infinity";
-import wrapper from '../store/configureStore'
-
-
 
 const InfinityExecute = () => {
   const dispatch = useDispatch();
