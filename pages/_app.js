@@ -6,7 +6,7 @@ import wrapper from '../store/configureStore'
 import Infinity from "../components/infinity";
 
 const Functions = ({ Component }) => {
-
+  console.log('실행 시작')
   return (
     <>
       <Head>
