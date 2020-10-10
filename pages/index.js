@@ -6,14 +6,16 @@ import VirtualizedExecute from "../components/VirtualizedExecute";
 import PaginationExecute from "../components/PaginationExecute";
 // import GitHubCalendar from 'react-github-calendar';
 import Link  from 'next/link';
+import CssMode from "../components/CssMode";
 
 const Home = () => {
-  // console.log("홈");
+  console.log("홈");
   const [home, setHome] = useState(true);
   const [normal, setNormal] = useState(false);
   const [infinity, setInfinity] = useState(false);
   const [virtualized, setVirtualized] = useState(false);
   const [pagination, setPagination] = useState(false);
+  const [cssMode, setCssMode] = useState(false);
 
   const onClickHome = useCallback(() => {
     setHome(true)
@@ -21,6 +23,7 @@ const Home = () => {
     setInfinity(false);
     setVirtualized(false);
     setPagination(false);
+    setCssMode(false);
   }, []);
 
   const onClickNormal = useCallback(() => {
@@ -29,6 +32,7 @@ const Home = () => {
     setInfinity(false);
     setVirtualized(false);
     setPagination(false);
+    setCssMode(false);
   }, []);
 
   const onClickInfinity = useCallback(() => {
@@ -39,6 +43,8 @@ const Home = () => {
     setInfinity(true);
     setVirtualized(false);
     setPagination(false);
+    setCssMode(false);
+
   }, []);
 
   const onClickVirtualized = useCallback(() => {
@@ -48,6 +54,8 @@ const Home = () => {
     setInfinity(false);
     setVirtualized(true);
     setPagination(false);
+    setCssMode(false);
+
   }, []);
 
   const onClickPagination = useCallback(() => {
@@ -57,8 +65,18 @@ const Home = () => {
     setInfinity(false);
     setVirtualized(false);
     setPagination(true);
+    setCssMode(false);
   }, []);
 
+  const onClickCssMode = useCallback(() => {
+    // console.log("페이지네이션 작동함");
+    setHome(false)
+    setNormal(false);
+    setInfinity(false);
+    setVirtualized(false);
+    setPagination(false);
+    setCssMode(true);
+  }, []);
 
   return (
     <div id={'header'}>
@@ -68,9 +86,10 @@ const Home = () => {
         <span style={styles.content} onClick={onClickInfinity}>Infinity Scrolling</span>
         <span style={styles.content} onClick={onClickVirtualized}>React virtualized</span>
         <span style={styles.content} onClick={onClickPagination}>Pagination</span>
+        <span style={styles.content} onClick={onClickCssMode}>Change css mode</span>
       </div>
 
-      <p style={styles.line}></p>
+      <p style={styles.line} />
 
         <a style={styles.a} href={'#header'}>맨 위로</a>
 
@@ -98,6 +117,9 @@ const Home = () => {
           <br />
           4. Pagination -> 100개의 데이터를 페이지화 했습니다.
           <br />
+          <br />
+          5. change css mode
+          <br />
         </div>)
       : (<></>)
       }
@@ -120,6 +142,10 @@ const Home = () => {
 
       {pagination
         ? (<PaginationExecute/>)
+        : (<></>)
+      }
+      {cssMode
+        ? (<CssMode/>)
         : (<></>)
       }
 
