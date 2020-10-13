@@ -7,6 +7,7 @@ import PaginationExecute from "../components/PaginationExecute";
 // import GitHubCalendar from 'react-github-calendar';
 import Link  from 'next/link';
 import CssMode from "../components/CssMode";
+import ImageCarousel from "../components/ImageCarousel";
 
 const Home = () => {
   console.log("홈");
@@ -16,6 +17,7 @@ const Home = () => {
   const [virtualized, setVirtualized] = useState(false);
   const [pagination, setPagination] = useState(false);
   const [cssMode, setCssMode] = useState(false);
+  const [imageCarousel, setImageCarousel] = useState(false);
 
   const onClickHome = useCallback(() => {
     setHome(true)
@@ -24,6 +26,7 @@ const Home = () => {
     setVirtualized(false);
     setPagination(false);
     setCssMode(false);
+    setImageCarousel(false);
   }, []);
 
   const onClickNormal = useCallback(() => {
@@ -33,6 +36,7 @@ const Home = () => {
     setVirtualized(false);
     setPagination(false);
     setCssMode(false);
+    setImageCarousel(false);
   }, []);
 
   const onClickInfinity = useCallback(() => {
@@ -44,6 +48,7 @@ const Home = () => {
     setVirtualized(false);
     setPagination(false);
     setCssMode(false);
+    setImageCarousel(false);
 
   }, []);
 
@@ -55,6 +60,7 @@ const Home = () => {
     setVirtualized(true);
     setPagination(false);
     setCssMode(false);
+    setImageCarousel(false);
 
   }, []);
 
@@ -66,6 +72,7 @@ const Home = () => {
     setVirtualized(false);
     setPagination(true);
     setCssMode(false);
+    setImageCarousel(false);
   }, []);
 
   const onClickCssMode = useCallback(() => {
@@ -76,6 +83,18 @@ const Home = () => {
     setVirtualized(false);
     setPagination(false);
     setCssMode(true);
+    setImageCarousel(false);
+  }, []);
+
+  const onClickImageCarousel = useCallback(() => {
+    // console.log("페이지네이션 작동함");
+    setHome(false)
+    setNormal(false);
+    setInfinity(false);
+    setVirtualized(false);
+    setPagination(false);
+    setCssMode(false);
+    setImageCarousel(true);
   }, []);
 
   return (
@@ -87,6 +106,7 @@ const Home = () => {
         <span style={styles.content} onClick={onClickVirtualized}>React virtualized</span>
         <span style={styles.content} onClick={onClickPagination}>Pagination</span>
         <span style={styles.content} onClick={onClickCssMode}>Change css mode</span>
+        <span style={styles.content} onClick={onClickImageCarousel}>Carousel</span>
       </div>
 
       <p style={styles.line} />
@@ -98,7 +118,7 @@ const Home = () => {
       ? (<div style={styles.home}>
           devsner의 기능 연습장입니다.
           <br />
-          [2020.10.06] 현재 구현 기능은, 아래와 같고, 소스 코드가 필요하신 분들은 깃헙을 참고해 주세요 ( components 폴더 -> 기능별 파일로 분류)
+          [2020.10.13] 현재 구현 기능은, 아래와 같고, 소스 코드가 필요하신 분들은 깃헙을 참고해 주세요 ( components 폴더 -> 기능별 파일로 분류)
           <br />
           <Link href={"https://bit.ly/2GJepzS"} passhref={true} >
             <a target="_blank">깃헙 바로가기</a>
@@ -119,6 +139,9 @@ const Home = () => {
           <br />
           <br />
           5. change css mode
+          <br />
+          <br />
+          6. image carousel
           <br />
         </div>)
       : (<></>)
@@ -144,12 +167,16 @@ const Home = () => {
         ? (<PaginationExecute/>)
         : (<></>)
       }
+
       {cssMode
         ? (<CssMode/>)
         : (<></>)
       }
 
-
+      {/*{imageCarousel*/}
+      {/*  ? (<ImageCarousel/>)*/}
+      {/*  : (<></>)*/}
+      {/*}*/}
 
     </div>
 
