@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Button from "./button";
 import styled, {ThemeProvider} from "styled-components";
-// import {dark, light} from "./theme"; // 환경별 테마 정보 가져오기
 
 const dark = {
   colors: {

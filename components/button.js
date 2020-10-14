@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Button = ({title, click}) => {
   return (
-    // <S.Button onClick={click}>
     <Buttons onClick={click}>
       <span>{title}</span>
     </Buttons>
@@ -13,7 +12,7 @@ const Button = ({title, click}) => {
 export default Button;
 
 const Buttons = styled.button`
-  border:20px solid yellow;
+  border:20px solid orange;
 
   margin: 5rem;
   width:20rem;
