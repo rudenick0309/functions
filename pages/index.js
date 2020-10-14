@@ -40,9 +40,8 @@ const Home = () => {
   }, []);
 
   const onClickInfinity = useCallback(() => {
-    // console.log("인피니티 작동함");
 
-    setHome(false)// dispatch(loadInfinityRequest())
+    setHome(false)
     setNormal(false);
     setInfinity(true);
     setVirtualized(false);
@@ -53,7 +52,6 @@ const Home = () => {
   }, []);
 
   const onClickVirtualized = useCallback(() => {
-    // console.log("버츄얼라이즈드 작동함");
     setHome(false)
     setNormal(false);
     setInfinity(false);
@@ -65,7 +63,6 @@ const Home = () => {
   }, []);
 
   const onClickPagination = useCallback(() => {
-    // console.log("페이지네이션 작동함");
     setHome(false)
     setNormal(false);
     setInfinity(false);
@@ -76,7 +73,6 @@ const Home = () => {
   }, []);
 
   const onClickCssMode = useCallback(() => {
-    // console.log("페이지네이션 작동함");
     setHome(false)
     setNormal(false);
     setInfinity(false);
@@ -87,7 +83,6 @@ const Home = () => {
   }, []);
 
   const onClickImageCarousel = useCallback(() => {
-    // console.log("페이지네이션 작동함");
     setHome(false)
     setNormal(false);
     setInfinity(false);
@@ -173,10 +168,10 @@ const Home = () => {
         : (<></>)
       }
 
-      {/*{imageCarousel*/}
-      {/*  ? (<ImageCarousel/>)*/}
-      {/*  : (<></>)*/}
-      {/*}*/}
+      {imageCarousel
+        ? (<ImageCarousel/>)
+        : (<></>)
+      }
 
     </div>
 
@@ -198,7 +193,6 @@ const styles = {
 
 
   wrapper: {
-    // padding: "130px",
     marginTop:'20px',
     display:'flex',
     justifyContent:'space-around',

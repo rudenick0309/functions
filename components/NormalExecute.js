@@ -7,8 +7,6 @@ const NormalExecute = () => {
   const dispatch = useDispatch();
   const normalBucket = useSelector((state) => state.normal?.normalBucket)
 
-  // console.log('f c, normalbucket;', normalBucket)
-
   useEffect(() => {
     dispatch({
       type:LOAD_NORMAL_REQUEST,
@@ -16,19 +14,14 @@ const NormalExecute = () => {
   }, [])
 
   return (
-    <div style={styles.wrapper}>
-
+    <div>
       {normalBucket?.map((el) => {
         return <Normal data={el}/>
       })}
-
     </div>
   )
 }
 
-const styles = {
-  wrapper:{
-  }
-}
+
 
 export default NormalExecute;

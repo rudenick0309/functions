@@ -5,12 +5,12 @@ import faker from 'faker';
 // 첫번째, 이니셜 스테이트 정하기
 export const initialState = {
 
-  // 1. infinity 데이터 불러오기  . Bucket은 success일 때, 데이터를 담는 변수다.
+  // 1. infinity 데이터 불러오기. Bucket은 success일 때, 데이터를 담는 변수다.
   InfinityBucket:[],
   loadInfinityLoading: false,
   loadInfinityDone: false,
   loadInfinityError: null,
-  hasMoreBucket: true,  // 얘가 true면 가져오게 하고, false면 못 가져오게 할거다 초기엔 true로 둬서 첫 데이터는 무조건 가져오게한다
+  hasMoreBucket: true,
 
 };
 
@@ -20,8 +20,6 @@ export const generateDummyPost = (number) => Array(number).fill().map(() => ({
   name:faker.name.findName(),
   image: faker.image.image(),
 }))
-
-// initialState.InfinityBucket = initialState.InfinityBucket.concat(generateDummyPost(10));
 
 
 // 두번쨰, 액션 상수 작성하기
@@ -50,15 +48,12 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
       draft.loadInfinityError = null;
       break;
     case LOAD_INFINITY_SUCCESS:
-      // console.log("f reducer infinity, load infinity success, action; ", action);
       draft.loadInfinityLoading = false;
       draft.loadInfinityDone = true;
-      // draft.InfinityBucket = action.data.concat(draft.InfinityBucket);
       draft.InfinityBucket = draft.InfinityBucket.concat(action.data);
       draft.hasMoreBucket = draft.InfinityBucket.length < 5000;  // 50개보다 많아지면 false가 된다.
       break;
     case LOAD_INFINITY_FAILURE:
-      // console.log("f reducer infinity, load infinity failure, action; ", action);
       draft.loadInfinityLoading = false;
       draft.loadInfinityError = action.error;
       break;

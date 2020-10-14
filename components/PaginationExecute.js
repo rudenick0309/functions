@@ -6,8 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {LOAD_PAGINATION_REQUEST} from "../reducers/pagination";
 
 const PaginationExecute = () => {
-  // const [posts, setPosts] = useState([]);  // go redux
-  // const [loading, setLoading] = useState(false); // go redux
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(15);
   const dispatch = useDispatch();

@@ -1,9 +1,8 @@
 import React, {useCallback} from "react";
 import Head from 'next/head';
-import {loadJsonRequest} from "../reducers/infinity";
-import {useDispatch, useSelector} from "react-redux";
 import wrapper from '../store/configureStore'
-import Infinity from "../components/infinity";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Functions = ({ Component }) => {
   console.log('실행 시작')

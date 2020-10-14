@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 
 const Infinity = ({data}) => {
-  // console.log("f c, infinity, data;", data);
   const {name, id, image} = data;
 
   return (

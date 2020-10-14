@@ -6,7 +6,7 @@ import styled, {ThemeProvider} from "styled-components";
 const dark = {
   colors: {
     titleColor: "#121212",
-    bgColor: "#2a0082",
+    bgColor: "yellow",
   }
 };
 
@@ -25,7 +25,6 @@ const CssMode = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      {/*<S.Main>*/}
       <Main>
         <Button title={"바꾸기"}
                 click={toggleTheme}/>

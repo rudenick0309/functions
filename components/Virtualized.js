@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from "react";
 import {List, AutoSizer, CellMeasurer, CellMeasurerCache} from "react-virtualized";
 import faker from "faker";
 
-// export default function Virtualized() {
 const Virtualized = () => {
   const [people, setPeople] = useState([]);
 
@@ -92,37 +91,3 @@ const styles = {
 };
 
 export default Virtualized;
-
-
-//
-// <div>
-//   <AutoSizer>
-//     {({width, height}) => (
-//       <List
-//         width={width}
-//         height={height}
-//         rowHeight={cache.current.rowHeight}
-//         deferredMeasurementCache={cache.current}
-//         rowCount={people.length}
-//         rowRenderer={({key, index, style, parent}) => {
-//           const person = people[index];
-//
-//           return (
-//             <CellMeasurer
-//               key={key}
-//               cache={cache.current}
-//               parent={parent}
-//               columnIndex={0}
-//               rowIndex={index}
-//             >
-//               <div style={style}>
-//                 <h2>{person.name}</h2>
-//                 <img src={person.images} />
-//               </div>
-//             </CellMeasurer>
-//           );
-//         }}
-//       />
-//     )}
-//   </AutoSizer>
-// </div>
