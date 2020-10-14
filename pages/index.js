@@ -4,13 +4,11 @@ import NormalExecute from "../components/NormalExecute";
 import InfinityExecute from "../components/infinityExecute";
 import VirtualizedExecute from "../components/VirtualizedExecute";
 import PaginationExecute from "../components/PaginationExecute";
-// import GitHubCalendar from 'react-github-calendar';
 import Link  from 'next/link';
 import CssMode from "../components/CssMode";
 import ImageCarousel from "../components/ImageCarousel";
 
 const Home = () => {
-  console.log("홈");
   const [home, setHome] = useState(true);
   const [normal, setNormal] = useState(false);
   const [infinity, setInfinity] = useState(false);

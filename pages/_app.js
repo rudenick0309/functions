@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Functions = ({ Component }) => {
-  console.log('실행 시작')
   return (
     <>
       <Head>
